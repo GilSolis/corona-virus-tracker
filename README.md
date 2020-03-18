@@ -1,3 +1,2 @@
 # corona-virus-tracker
-
-testing change
+data is updated daily from systems.jhu.edu
