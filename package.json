@@ -1,0 +1,29 @@
+{
+  "name": "corona-virus-tracker",
+  "version": "1.0.0",
+  "description": "data is updated daily from systems.jhu.edu",
+  "main": "cheerio.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GilSolis/corona-virus-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GilSolis/corona-virus-tracker/issues"
+  },
+  "homepage": "https://github.com/GilSolis/corona-virus-tracker#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "eslint": "^6.8.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "got": "^10.6.0",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.5"
+  }
+}
