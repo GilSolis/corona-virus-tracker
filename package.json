@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "data is updated daily from systems.jhu.edu",
   "main": "cheerio.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GilSolis/corona-virus-tracker.git"
