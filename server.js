@@ -63,12 +63,19 @@ app.listen(PORT, function() {
 
 
 axios.get("http://redmondlocal.com").then((res)=>{
-    const newObj = {};
+    const categories = [];
     const $ = cheerio.load(res.data);
-    $(".has-text-align-center").each((index, element)=>{
-      console.log($(element)
-                    // .children()
-                    .html());
-    });
 
+   
+    $("h4.has-text-align-center").each((index, element)=>{
+      const title = $(element).text();
+      categories[index]={title};
+
+    });
+    console.log(categories);
+
+    // $(".has-text-align-center").each((index, element)=>{
+    //   console.log($(element)
+    //                 .html());
+    // });
 });
