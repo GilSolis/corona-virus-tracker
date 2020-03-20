@@ -1,0 +1,38 @@
+<div class="jumbotron">
+    <h1 class="display-4">
+        <i class="fas fa-clinic-medical"></i> Coronavirus latest stats
+    </h1>
+    <p>
+        The coronavirus outbreak is an ongoing global outbreak of coronavirus
+        disease (COVID-19) first identified in Wuhan, Hubei, China in December
+        2019.
+    </p>
+    <hr class="my-4" />
+
+    <p>
+        This page provides the recent info about the COVID-19 spread around the
+        world (updated daily from systems.jhu.edu). You can support this portal
+        by clicking the Donate button:
+    </p>
+    <!-- paypal button here -->
+    {{>home/paypalBtn}}
+
+    <p>
+        As of today (<span id="todayDate"></span>) historical data is available
+        for <span id="dataDays"></span> days since January 22, 2020. Pick a date
+        from the field below and click submit to see the data.
+    </p>
+
+    <!-- date picker here  -->
+    {{>home/datePicker}}
+
+    <div class="break-out"><br /></div>
+    <div class="row">
+        <div class="col-sm-12">
+            <button class="btn btn-danger" data-toggle="collapse" data-target="#redmondBusiness">
+                For Redmond Business Owners
+            </button>
+        </div>
+    </div>
+    <!-- end of date picker -->
+</div>
