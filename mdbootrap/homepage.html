@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+     <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.1/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="style/css" href="home.css">
+
+</head>
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="#">Corona-virus Tracker</a>
+  
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+  
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+            
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="paypal.html">Donation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+  
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">More</a>
+          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Share and thought</a>
+            <a class="dropdown-item" href="#">Support community</a>
+            <a class="dropdown-item" href="#">Login</a>
+          </div>
+        </li>
+  
+      </ul>
+      <!-- Links -->
+  
+      <form class="form-inline">
+        <div class="md-form my-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        </div>
+      </form>
+    </div>
+    <!-- Collapsible content -->
+  
+  </nav>
+  <!--/.Navbar-->
+  <!-- News jumbotron -->
+<div class="jumbotron text-center hoverable p-4">
+
+    <!-- Grid row -->
+    <div class="row">
+  
+      <!-- Grid column -->
+      <div class="col-md-4 offset-md-1 mx-3 my-3">
+  
+        <!-- Featured image -->
+        <div class="view overlay">
+          <img src="./corona.jpg" class="img-fluid" alt="Sample image for first version of blog listing">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+  
+      </div>
+      <!-- Grid column -->
+  
+      <!-- Grid column -->
+      <div class="col-md-7 text-md-left ml-3 mt-3">
+  
+        <!-- Excerpt -->
+        <a href="#!" class="green-text">
+          <h6 class="h6 pb-1"><i class="fas fa-desktop pr-1"></i>Developer</h6>
+        </a>
+  
+        <h4 class="indigo-text my-4 font-weight-bold">What would you do to protect yourself and help our community?</h4>
+        <p><i class="fas fa-clinic-medical">  The coronavirus outbreak is an ongoing global outbreak of coronavirus
+          disease (COVID-19) first identified in Wuhan, Hubei, China in December
+          2019.
+        
+          </i>
+        </p>
+        <p>Click below to see the latest update about Corona-virus</p>
+        <!-- date picker here  -->
+      <div id="sky" class="row ">
+          <div class="col-sm-2">
+            <input type="date" id="datePicker1" class="form-control" />
+          </div>
+        </div>
+        <div class="break-out"><br /></div>
+        <div class="row">
+          <div class="col-sm-12">
+            <button type="button" class="btn btn-primary"  id="submitBtn">View Data</button>
+        
+                
+           
+             </button>
+          </div>
+        </div>
+        <div class="break-out"><br /></div>
+        <div class="row">
+          <div class="col-sm-12">
+            <button
+              class="btn btn-danger"
+              data-toggle="collapse"
+              data-target="#redmondBusiness"
+            >
+              For Redmond Business Owners
+            </button>
+          </div>
+        </div>
+        <!-- end of date picker -->
+      </div>
+  
+      <div class="container">
+        <!-- collecting data about Redmond local business -->
+        <div id="redmondBusiness" class="collapse">
+          <div class="row">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSfEgOrAGARD1myVYITnN3C2VtMwldcSYjEv3_SBfewHJjNdVA/viewform?embedded=true"
+              width="640"
+              height="1759"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              >Loading…</iframe
+            >
+          </div>
+        </div>
+  
+        <!-- end collecting data about Redmond local business -->
+  
+        <div class="break-out"><br /></div>
+        <!-- This row will handle all the data -->
+        <div class="row">
+          <div class="card">
+            <div class="card-body emp" id="today-section">
+             
+  
+              <div class="table-responsive tableFixHead" id="today"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- end of card -->
+  
+      <!-- adding a footer -->
+  
+      
+        <!-- Copyright -->
+        
+        <!-- Copyright -->
+      </footer>
+  
+      <!-- adding an arrow to scroll to the top -->
+      <a id="back2Top" title="Back to top" href="#">&#10148;</a>
+       
+
+    <!-- adding an arrow to scroll to the top -->
+    <a id="back2Top" title="Back to top" href="#">&#10148;</a>
+
+    <!-- linking font awesome -->
+    <script
+      src="https://kit.fontawesome.com/8bee116590.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- end   adding an arrow to scroll to the top-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- <script src="./reset.js"></script> -->
+    <script src="./assets/js/script.js"></script>
+    <!-- Have fun and stay healthy! Peter :)  -->
+  </body>
+</html>
+
+
+<body>
+    
+     
+      
+  
+      
+      
+</body>
+</html>
