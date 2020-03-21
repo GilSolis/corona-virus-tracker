@@ -66,16 +66,71 @@ axios.get("http://redmondlocal.com").then((res)=>{
     const categories = [];
     const $ = cheerio.load(res.data);
 
-   
-    $("h4.has-text-align-center").each((index, element)=>{
-      const title = $(element).text();
-      categories[index]={title};
+    // $(".wp-block-group .alignfull").each((index,element)=>{
+    //   const title = $(element).children("h4");
+    // })
 
-    });
-    console.log(categories);
+    //categories
+    // $("h4.has-text-align-center").each((index, element)=>{
+    //   const title = $(element).text();
+    //   categories[index]={title:title};
+
+    // });
+    // console.log(categories);
 
     // $(".has-text-align-center").each((index, element)=>{
-    //   console.log($(element)
-    //                 .html());
+    //   const title = $(element).children('h4').text();
+    //   categories[index] = {title:title};
+     
     // });
+    // console.log(categories);
+
+
+    // console.log($('.has-text-align-center').children('strong').first().text());
+    // console.log($('.entry-content').find('h4').text());
+
+    // creating object for categories
+    // $('.entry-content').find('h4').each((index,element)=>{
+    //   const title=$(element).text();
+    //   categories[index]={title};
+    // })
+    // console.log(categories);
+
+  //  console.log($('.entry-content').find('strong').text());
+  
+  // $(".entry-content").find('strong').each((index,element)=>{
+  //   const name = $(element).text();
+  //   categories[index]={name};
+  // })
+  // console.log(categories);
+
+
+ 
+  // $(".wp-block-group.alignfull").find('strong').each((index,element)=>{
+  //   const name = $(element).text();
+  //   categories[index]={name};
+  // })
+  // console.log(categories);
+
+
+  // console.log($("#main").children(".wp-block-group.alignfull").html());
+  // $(".wp-block-group.alignfull").find('strong').each((index,element)=>{
+  //   const name = $(element).text();
+  //   categories[index]={name};
+  // })
+  // console.log(categories);
+ 
+  // console.log($(".wp-block-columns.alignwide").parent().html());
+  $(".entry-content").children(".wp-block-group.alignfull").each((index,element)=>{
+    const title = $(element).find("h4").text();
+    const names = $(element).find("strong").text();
+    categories[index]={title,names};
+  })
+  console.log(categories);
 });
+
+// console.log($(".entry-content").children(".wp-block-group.alignfull").children(".wp-block-group__inner-container").children("h4").html());
+
+
+
+
