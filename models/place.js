@@ -7,6 +7,10 @@ module.exports = function(sequelize, DataTypes) {
           len: [1]
         }
       },
+      category: {
+        type: DataTypes.TEXT,
+        len: [1]
+      },
       titleLink: {
         type: DataTypes.TEXT,
         len: [1]
