@@ -1,69 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <!-- adding bootstrap -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+  <!-- adding bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
 
-    <title>Peter B - Coronavirus tracker</title>
-  </head>
-  <body>
-    <div class="jumbotron">
-      <h1 class="display-4">
-        <i class="fas fa-clinic-medical"></i> Coronavirus latest stats
-      </h1>
-      <p>
-        The coronavirus outbreak is an ongoing global outbreak of coronavirus
-        disease (COVID-19) first identified in Wuhan, Hubei, China in December
-        2019.
-      </p>
-      <hr class="my-4" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
 
-      <p>
-        This page provides the recent info about the COVID-19 spread around the
-        world (updated daily from systems.jhu.edu). You can support this portal
-        by clicking the Donate button:
-      </p>
-      <!-- paypal button here -->
-      <form
-        action="https://www.paypal.com/cgi-bin/webscr"
-        method="post"
-        target="_top"
-      >
-        <input type="hidden" name="cmd" value="_donations" />
-        <input type="hidden" name="business" value="T7Y7WPTYT67W6" />
-        <input type="hidden" name="currency_code" value="USD" />
-        <input
-          type="image"
-          src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/pp-acceptance-small.png"
-          name="submit"
-          title="PayPal - The safer, easier way to pay online!"
-          alt="Donate with PayPal button"
-        />
-        <img
-          alt=""
-          src="https://www.paypal.com/en_US/i/scr/pixel.gif"
-          width="1"
-          height="1"
-        />
-      </form>
+  <title>Peter B - Coronavirus tracker</title>
+</head>
 
-      <p>
-        As of today (<span id="todayDate"></span>) historical data is available
-        for <span id="dataDays"></span> days since January 22, 2020. Pick a date
-        from the field below and click submit to see the data.
-      </p>
+<body>
+  <div class="jumbotron">
+    <h1 class="display-4">
+      <i class="fas fa-clinic-medical"></i> Coronavirus latest stats
+    </h1>
+    <p>
+      The coronavirus outbreak is an ongoing global outbreak of coronavirus
+      disease (COVID-19) first identified in Wuhan, Hubei, China in December
+      2019.
+    </p>
+    <hr class="my-4" />
 
-      <!-- date picker here  -->
+    <p>
+      This page provides the recent info about the COVID-19 spread around the
+      world (updated daily from systems.jhu.edu). You can support this portal
+      by clicking the Donate button:
+    </p>
+    <!-- paypal button here -->
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <input type="hidden" name="cmd" value="_donations" />
+      <input type="hidden" name="business" value="T7Y7WPTYT67W6" />
+      <input type="hidden" name="currency_code" value="USD" />
+      <input type="image" src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/pp-acceptance-small.png"
+        name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+      <img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+    </form>
+
+    <p>
+      As of today (<span class="todayDate"></span>) historical data is available
+      for <span id="dataDays"></span> days since January 22, 2020. Pick a date
+      from the field below and click submit to see the data.
+    </p>
+
+    <!-- date picker here  -->
+    <form>
       <div class="row">
         <div class="col-sm-2">
           <input type="date" id="datePicker1" class="form-control" />
@@ -72,90 +58,76 @@
       <div class="break-out"><br /></div>
       <div class="row">
         <div class="col-sm-12">
-          <button type="button" class="btn btn-primary"  id="submitBtn">
-            See data!
-          </button>
+          <input type="submit" class="btn btn-primary" id="submitBtn" value="See data!" min="2020-01-22" />
         </div>
       </div>
       <div class="break-out"><br /></div>
       <div class="row">
         <div class="col-sm-12">
-          <button
-            class="btn btn-danger"
-            data-toggle="collapse"
-            data-target="#redmondBusiness"
-          >
+          <button class="btn btn-danger" data-toggle="collapse" data-target="#redmondBusiness">
             For Redmond Business Owners
           </button>
         </div>
       </div>
-      <!-- end of date picker -->
-    </div>
+    </form>
+    <!-- end of date picker -->
+  </div>
 
-    <div class="container">
-      <!-- collecting data about Redmond local business -->
-      <div id="redmondBusiness" class="collapse">
-        <div class="row">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSfEgOrAGARD1myVYITnN3C2VtMwldcSYjEv3_SBfewHJjNdVA/viewform?embedded=true"
-            width="640"
-            height="1759"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-            >Loading…</iframe
-          >
-        </div>
-      </div>
-
-      <!-- end collecting data about Redmond local business -->
-
-      <div class="break-out"><br /></div>
-      <!-- This row will handle all the data -->
+  <div class="container">
+    <!-- collecting data about Redmond local business -->
+    <div id="redmondBusiness" class="collapse">
       <div class="row">
-        <div class="card">
-          <div class="card-body emp" id="today-section">
-            <p>
-              <strong
-                >Dataset is available since Jan 22, 2020 till today (<span
-                  id="todayDate1"
-                ></span
-                >). For other dates search is disabled</strong
-              >
-            </p>
-
-            <div class="table-responsive tableFixHead" id="today"></div>
-          </div>
-        </div>
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSfEgOrAGARD1myVYITnN3C2VtMwldcSYjEv3_SBfewHJjNdVA/viewform?embedded=true"
+          width="640" height="1759" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
       </div>
     </div>
 
-    <!-- end of card -->
+    <!-- end collecting data about Redmond local business -->
 
-    <!-- adding a footer -->
+    <div class="break-out"><br /></div>
+    <!-- This row will handle all the data -->
+    <div class="row">
+      <div class="card">
+        <div class="card-body emp" id="today-section">
+          <p>
+            <strong>Dataset is available since Jan 22, 2020 till today (<span class="todayDate"></span>). For other
+              dates
+              search is disabled</strong>
+          </p>
 
-    <footer class="page-footer font-small blue">
-      <!-- Copyright -->
-      <div class="footer-copyright text-center py-3">
-        <h7>Created by Peter Bold / peterboldyrev@gmail.com</h7>
+          <div class="table-responsive tableFixHead" id="today"></div>
+        </div>
       </div>
-      <!-- Copyright -->
-    </footer>
+    </div>
+  </div>
 
-    <!-- adding an arrow to scroll to the top -->
-    <a id="back2Top" title="Back to top" href="#">&#10148;</a>
+  <!-- end of card -->
 
-    <!-- linking font awesome -->
-    <script
-      src="https://kit.fontawesome.com/8bee116590.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- end   adding an arrow to scroll to the top-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <!-- <script src="./reset.js"></script> -->
-    <script src="./assets/js/script.js"></script>
-    <!-- Have fun and stay healthy! Peter :)  -->
-  </body>
+  <!-- adding a footer -->
+
+  <footer class="page-footer font-small blue">
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">
+      <h7>Created by Peter Bold / peterboldyrev@gmail.com</h7>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+  <!-- adding an arrow to scroll to the top -->
+  <a id="back2Top" title="Back to top" href="#">&#10148;</a>
+
+  <!-- linking font awesome -->
+  <script src="https://kit.fontawesome.com/8bee116590.js" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <!-- end   adding an arrow to scroll to the top-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- <script src="./reset.js"></script> -->
+  <script src="./assets/js/script.js"></script>
+  <!-- Have fun and stay healthy! Peter :)  -->
+</body>
+
 </html>
