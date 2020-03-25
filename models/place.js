@@ -7,10 +7,6 @@ module.exports = function(sequelize, DataTypes) {
           len: [1]
         }
       },
-      category: {
-        type: DataTypes.TEXT,
-        len: [1]
-      },
       titleLink: {
         type: DataTypes.TEXT,
         len: [1]
@@ -29,14 +25,6 @@ module.exports = function(sequelize, DataTypes) {
       }
 
     });
-  
-    Post.associate = function(models) {
-      Post.belongsTo(models.Category, {
-        foreignKey: {
-          allowNull: false
-        }
-      });
-    };
   
     return Post;
   };

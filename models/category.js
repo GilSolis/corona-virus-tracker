@@ -1,14 +1,17 @@
-module.exports = function(sequelize, DataTypes) {
-    var Category = sequelize.define("Category", {
-      name: DataTypes.STRING
+module.exports = function (sequelize, DataTypes) {
+  var Category = sequelize.define("Category", {
+    name: {
+      type: DataTypes.STRING,
+      unique: true
+    }
+  });
+
+  Category.associate = function (models) {
+    Category.hasMany(models.Place, {
+      onDelete: "cascade",
+      foreignKey: "categoryId"
     });
-  
-    Category.associate = function(models) {
-      Category.hasMany(models.Place, {
-        onDelete: "cascade"
-      });
-    };
-  
-    return Category;
   };
-  
+
+  return Category;
+};
