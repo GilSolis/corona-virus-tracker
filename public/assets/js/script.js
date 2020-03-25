@@ -1,46 +1,3 @@
-// messing up with dates
-
-//today date to include into url (upd - not using this, need to remove w datepicker)
-
-// let today = new Date();
-// const yesterday = new Date(today);
-// yesterday.setDate(yesterday.getDate() - 1)
-
-// const month = yesterday.getMonth() + 1
-// let yesterday_formatted = yesterday.getFullYear() + "-"
-// yesterday_formatted += month < 10 ? "0" + month : month
-// yesterday_formatted += "-" + yesterday.getDate()
-
-// console.log(yesterday_formatted)
-
-// let dd = today.getDate();
-// let mm = today.getMonth() + 1;
-// let yyyy = today.getFullYear();
-
-// if (dd < 10) { dd = '0' + dd; }
-// if (mm < 10) { mm = '0' + mm; }
-
-// today = mm + '-' + dd + '-' + yyyy;
-
-// // today date end (old - no need)
-
-// //counter of dates
-
-// let date1 = new Date("01-22-2020");
-// let date2 = new Date(today);
-
-// // To calculate the time difference of two dates
-// let Difference_In_Time = date2.getTime() - date1.getTime();
-// // To calculate the no. of days between two dates
-// let Difference_In_Days = Math.round(Difference_In_Time / (1000 * 3600 * 24));
-
-//counter of dates end
-
-// main portion of the code
-//
-//
-//
-
 /*Scroll to top when arrow up clicked BEGIN*/
 $(window).scroll(function() {
   var height = $(window).scrollTop();
@@ -78,33 +35,77 @@ $(document).ready(function() {
     return false;
   });
 });
-/*Scroll to top when arrow up clicked END*/
-
-//
-//
-//
-//
-// end main portion of the code
-
-// date picker limits the # of days to choose from
 
 function datePicker(today) {
   // var dtToday = new Date();
 
-  // var month = dtToday.getMonth() + 1;
-  // var day = dtToday.getDate();
-  // var year = dtToday.getFullYear();
-  // if (month < 10)
-  // 	month = '0' + month.toString();
-  // if (day < 10)
-  // 	day = '0' + day.toString();
+  // date picker limits the # of days to choose from
+
+  function datePicker(today) {
+    // var dtToday = new Date();
+
+    // var month = dtToday.getMonth() + 1;
+    // var day = dtToday.getDate();
+    // var year = dtToday.getFullYear();
+    // if (month < 10)
+    // 	month = '0' + month.toString();
+    // if (day < 10)
+    // 	day = '0' + day.toString();
+
+    // var maxDate = year + '-' + month + '-' + day;
+
+    $("#datePicker1").attr("max", today.format("YYYY-MM-DD"));
+  }
+
+  // end date picker
+
+  function displayTable(date) {
+    const searchDate = convertDate(date);
+    const searchUrl = `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/${searchDate}.csv`;
+
+    dataForToday();
+
+    function dataForToday() {
+      Papa.parse(searchUrl, {
+        download: true,
+        complete: function(results) {
+          $("#today").append(arrayToTable(results.data));
+          scrollToTable();
+        }
+      });
+    }
+
+    //adding data to the table
+    function arrayToTable(tableData) {
+      var table = $('<table id="tableFixHead"></table>');
+      $(tableData).each(function(i, rowData) {
+        var row = $("<tr></tr>");
+        $(rowData).each(function(j, cellData) {
+          row.append($("<td>" + cellData + "</td>"));
+        });
+        table.append(row);
+      });
+      return table;
+    }
+
+    //scrolling to the results for mobile
+    function scrollToTable() {
+      $("html, body").animate(
+        {
+          scrollTop: $("#tableFixHead").offset()
+        },
+        1000
+      );
+    }
+    //end scrolling to the results for mobile
+  }
+
+  // end capture user date choice
 
   // var maxDate = year + '-' + month + '-' + day;
 
   $("#datePicker1").attr("max", today.format("YYYY-MM-DD"));
 }
-
-// end date picker
 
 function displayTable(date) {
   const searchDate = convertDate(date);
@@ -122,31 +123,30 @@ function displayTable(date) {
     });
   }
 
-  //adding data to the table
-  function arrayToTable(tableData) {
-    var table = $('<table id="tableFixHead"></table>');
-    $(tableData).each(function(i, rowData) {
-      var row = $("<tr></tr>");
-      $(rowData).each(function(j, cellData) {
-        row.append($("<td>" + cellData + "</td>"));
-      });
-      table.append(row);
-    });
-    return table;
-  }
-
-  //scrolling to the results for mobile
-  function scrollToTable() {
-    $("html, body").animate(
-      {
-        scrollTop: $("#tableFixHead").offset()
-      },
-      1000
-    );
-  }
   //end scrolling to the results for mobile
 }
 
+//adding data to the table
+function arrayToTable(tableData) {
+  var table = $('<table id="tableFixHead"></table>');
+  $(tableData).each(function(i, rowData) {
+    var row = $("<tr></tr>");
+    $(rowData).each(function(j, cellData) {
+      row.append($("<td>" + cellData + "</td>"));
+    });
+    table.append(row);
+  });
+  return table;
+}
+//scrolling to the results for mobile
+function scrollToTable() {
+  $("html, body").animate(
+    {
+      scrollTop: $("#tableFixHead").offset()
+    },
+    1000
+  );
+}
 // end capture user date choice
 
 //converting user input to use for the search
