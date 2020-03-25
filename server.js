@@ -26,7 +26,7 @@ db.sequelize.sync({ force: true }).then(function () {
       
       db.Category.create({ name: $(this).text() })
       .then(function (category) {
-        console.log(category.dataValues.id)
+        // console.log(category.dataValues.id)
         // db.Place.create({ name: "Peter" })
         
           var cols = $(this).siblings('.wp-block-columns').children()
