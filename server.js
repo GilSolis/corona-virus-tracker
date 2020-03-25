@@ -15,18 +15,15 @@ const hbs = require("express-handlebars");
 app.engine("handlebars", hbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-require("./routes/api-routes.js")(app);
 app.use(require("./routes"));
 
-db.sequelize.sync().then(function(){
-  app.listen(PORT, function () {
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
     console.log("Listening on PORT", PORT);
   });
 });
 
-
-
-axios.get("http://redmondlocal.com").then((res) => {
+/* axios.get("http://redmondlocal.com").then((res) => {
   const categories = [];
   const $ = cheerio.load(res.data);
 
@@ -64,4 +61,4 @@ axios.get("http://redmondlocal.com").then((res) => {
   })
 
 
-});
+}); */
