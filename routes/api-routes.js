@@ -13,51 +13,42 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
- 
-  app.get("/api/places", function(req, res) {
-db.Place.findAll({}).then(function(dbPlace){
-  res.json(dbTodo);
+  app.get("/api/categories", function(req, res) {
+db.Category.findAll({
+  include:[db.Place]
+})
+.then(function(dbCategory){
+  res.json(dbCategory);
 })
   });
 
-// will be an error here until the frontend is ready
 
-  // app.post("/api/places", function(req, res) {
-  //   db.Place.create({
-  //     name:req.body.name, //check once developed the frontedn with the form
-  //     category:req.body.category // check with Ben if I need just one table or how to post to another table
-  //     titleLink:req.body.titleLink,
-  //     optionText:req.body.optionText,
-  //     optionLink:req.body.optionLink,
-  //     text:req.body.text
-  //   }).then(function(dbPlace){
-  //     res.json(dbPlace);
-  //   })
-  // });
-
-
-
-  // DELETE route for deleting todos
-  app.delete("/api/todos/:id", function(req, res) {
-db.Place.destroy({
-  where:{
-    id:req.params.id
-  }
-}).then(function(dbPlace){
-  res.json(dbPlace);
-})
+  app.get("/api/categories/:id", function (req, res) {
+    db.Category.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [db.Place]
+    }).then(function (dbCategory) {
+      res.json(dbCategory);
+    })
   });
 
-  // PUT route
-  app.put("/api/todos", function(req, res) {
-    // db.Place.update({
-      //     name:req.body.name, //check once developed the frontedn with the form
-      //     category:req.body.category // check with Ben if I need just one table or how to post to another table
-      //     titleLink:req.body.titleLink,
-      //     optionText:req.body.optionText,
-      //     optionLink:req.body.optionLink,
-      //     text:req.body.text
-      //   }).then(function(dbPlace){
-      //     res.json(dbPlace);
+  app.post("/api/categories", function(req, res) {
+    db.Category.create(req.body).then(function(dbCategory) {
+      res.json(dbCategory);
+    });
   });
+
+  app.delete("/api/categories/:id", function(req, res) {
+    db.Category.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbCategory) {
+      res.json(dbCategory);
+    });
+  });
+
 };
+
