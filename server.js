@@ -18,23 +18,23 @@ app.set("view engine", "handlebars");
 require("./routes/api-routes.js")(app);
 app.use(require("./routes"));
 
-db.sequelize.sync({ force: true }).then(function () {
+db.sequelize.sync({}).then(function () {
   axios.get("http://redmondlocal.com").then(({ data }) => {
     const $ = cheerio.load(data);
-    
+
     $("h4.has-text-align-center").each(function (i, element) {
       // console.log($(this));
       db.Category.create({ name: $(element).text() })
-      .then(function (category) {
-        // console.log(category.dataValues.id)
-        // db.Place.create({ name: "Peter" })
-        // console.log("===========>", $(this).find('.wp-block-columns').children());
-       var cols = $(element).siblings('.wp-block-columns').children();
-       //console.log(cols);
-      
-// console.log(cols);
-          
-cols.each(function (i, element) {
+        .then(function (category) {
+          // console.log(category.dataValues.id)
+          // db.Place.create({ name: "Peter" })
+          // console.log("===========>", $(this).find('.wp-block-columns').children());
+          var cols = $(element).siblings('.wp-block-columns').children();
+          //console.log(cols);
+
+          // console.log(cols);
+
+          cols.each(function (i, element) {
             db.Place.create({
               categoryId: category.dataValues.id,
               name: $(this).find('strong').text(),
@@ -45,7 +45,7 @@ cols.each(function (i, element) {
             })
           })
         })
-        // .catch(function(err){console.log (err)})
+      // .catch(function(err){console.log (err)})
     });
 
   })
