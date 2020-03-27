@@ -1,28 +1,28 @@
 {{>home/jumbotron }}
 
+
 <div class="container">
     <!-- collecting data about Redmond local business -->
-    <div id="redmondBusiness" class="collapse">
-        <div class="row">
-            <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLSfEgOrAGARD1myVYITnN3C2VtMwldcSYjEv3_SBfewHJjNdVA/viewform?embedded=true"
-                width="640" height="1759" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <div class="row">
+        <div class="col-12">
+            <div id="redmondBusiness" class="collapse business-container showBusiness">
+            </div>
         </div>
     </div>
 
-    <!-- end collecting data about Redmond local business -->
 
-    <div class="break-out"><br /></div>
     <!-- This row will handle all the data -->
     <div class="row">
-        <div class="card">
-            <div class="card-body emp" id="today-section">
-                <p>
-                    <strong>Dataset is available since Jan 22, 2020 till today (<span id="todayDate1"></span>). For
-                        other dates search is disabled</strong>
-                </p>
-                <div class="table-responsive tableFixHead" id="today"></div>
-                <div class="btn btn-block btn-danger" id="moreTable">See More</div>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body emp" id="today-section">
+                    <p>
+                        <strong>Dataset is available since Jan 22, 2020 till today (<span id="todayDate1"></span>). For
+                            other dates search is disabled</strong>
+                    </p>
+
+                    <div class="table-responsive tableFixHead" id="today"></div>
+                </div>
             </div>
         </div>
     </div>
