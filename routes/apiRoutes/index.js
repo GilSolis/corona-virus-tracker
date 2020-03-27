@@ -1,10 +1,10 @@
 const router = require("express").Router();
 const placesRoutes = require("./places");
-const todoRoutes = require("./todos");
+const categoriesRoutes = require("./categories");
 const prayerRoutes = require("./prayers");
 
 router.use("/places", placesRoutes);
-router.use("/todos", todoRoutes);
+router.use("/categories", categoriesRoutes);
 router.use("/prayers", prayerRoutes);
 
 module.exports = router;
