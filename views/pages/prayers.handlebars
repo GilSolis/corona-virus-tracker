@@ -1,31 +1,33 @@
-<div class="jumbotron">
+<div class="jumbotron jumbotron-fluid"
+    style="background-image: url(https://images.pexels.com/photos/1112048/pexels-photo-1112048.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000);">
     <h1 class="text-center">Thoughts and Prayers</h1>
 </div>
-
-
-
 <div class="container">
     <div class="row">
-        <button id="next">></button>
-        <div class="col-sm-8 col-sm-offset-2">
-            <h2>Prayers</h2>
-            <hr />
-            <div id="prayerArea"></div>
+        {{!-- <form id="prayerForm" class=" border border-light p-2"> --}}
+        <div class="col-12 col-md-6">
+            <div class="border border-light p-2">
+                <h2 class="text-center">Prayers</h2>
+                <hr />
+                <div id="prayerArea" class="list-group"></div>
+                <button id="next" class="btn btn-block" type="submit">See more prayers!</button>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-            <p class="cool-font">Name</p>
-            <input class="form-control" type="text" id="name" placeholder="Enter Your Name" />
-            <p class="cool-font">Location</p>
-            <input class="form-control" type="text" id="location" placeholder="State or Country" />
-            <br />
-            <p class="cool-font">Prayer</p>
-            <textarea class="form-control" rows="3" id="prayerBox"
-                placeholder="Enter you Thoughts and Prayers"></textarea>
-            <button id="prayerSubmit" class="btn btn-lg pull-right">
-                Submit!
-            </button>
+
+        <div class="col-12 col-md-6">
+            <form id="prayerForm" class="border border-light p-2">
+                <h2 class="text-center">Pray for Others</h2>
+                <hr />
+                <input type="text" id="name" class="form-control mb-4" placeholder="Name">
+
+                <input type="text" id="location" class="form-control mb-4" placeholder="Location">
+
+                <textarea class="form-control rounded-0" id="prayerBox" maxlength="250" rows="6"
+                    placeholder="Prayer"></textarea>
+                {{!-- <br> --}}
+                <button id="prayerSubmit" class="btn btn-info btn-block" type="submit">Submit your prayer!</button>
+            </form>
         </div>
+        {{!-- </form> --}}
     </div>
 </div>

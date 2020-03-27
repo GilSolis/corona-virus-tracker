@@ -1,3 +1,8 @@
+/* * {
+    padding: 0;
+    margin: 0;
+} */
+
 #back2Top {
     width: 55px;
     line-height: 55px;
@@ -19,43 +24,65 @@
     font-size: 30px;
     text-decoration: none;
 }
+
 #back2Top:hover {
     background-color: #DDF;
     color: #000;
 }
 
-
-.tableFixHead { 
-    overflow-y: auto; 
-    height: 300px; 
+.tableFixHead {
+    overflow-y: auto;
+    height: 300px;
 }
 
-table  { 
+table {
     border-spacing: 10px;
     border-collapse: collapse;
-     width: 100%;
-     font-size: small;
-     
-     }
+    width: 100%;
+    font-size: small;
+}
 
-table td { 
- 
-    border: 1px solid rgb(218, 215, 215);;
+table td {
+    border: 1px solid rgb(218, 215, 215);
+}
 
- }
-
-
-.container{
-  margin: 0 auto 3px auto;
-background-color: #ffffff;
-     width:95%;
-   }
-
-
-
-footer{
+footer {
     border-top: 3px solid #4aaaa5;
     background-color: #666666;
     font-family: Arial, Helvetica, sans-serif;
     color: #ffffff;
-  }
+}
+
+
+/* Prayer styling */
+
+
+/* #prayerForm {
+    width: 90vw;
+    margin-top: 5%;
+}
+
+.prayer {
+    padding: 1%;
+    border-bottom: black solid 1px;
+}
+
+.prayerContainer {
+    padding: 3%;
+    display: flex;
+    justify-content: center;
+}
+
+#prevPrayers {
+    width: 90vw
+} */
+
+
+/* next prayer button */
+
+
+/* #next {
+    margin-top: 1%;
+    background-color: green;
+    color: green
+} */
