@@ -16,6 +16,7 @@
 
 </head>
 <!--Navbar-->
+<body>
 <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
     <!-- Navbar brand -->
@@ -51,7 +52,7 @@
           <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="#">Share and thought</a>
             <a class="dropdown-item" href="#">Support community</a>
-            <a class="dropdown-item" href="#">Login</a>
+            <a class="dropdown-item" href="login.html">Login</a>
           </div>
         </li>
   
@@ -67,108 +68,61 @@
     <!-- Collapsible content -->
   
   </nav>
-  <!--/.Navbar-->
-  <!-- News jumbotron -->
-<div class="jumbotron text-center hoverable p-4">
+  <div class="bg">
+    <div class="jumbotron text-center mdb-color lighten-2 white-text mx-2 mb-5">
 
-    <!-- Grid row -->
-    <div class="row">
-  
-      <!-- Grid column -->
-      <div class="col-md-4 offset-md-1 mx-3 my-3">
-  
-        <!-- Featured image -->
-        <div class="view overlay">
-          <img src="./corona.jpg" class="img-fluid" alt="Sample image for first version of blog listing">
-          <a>
-            <div class="mask rgba-white-slight"></div>
-          </a>
+      <!-- Title -->
+      <h2 class="card-title h2">Corona-Virus information</h2>
+    
+      <!-- Subtitle -->
+      <p class="my-4 h6">Latest update on Coronavirus(COVID-19)<span id="today"></span></p>
+    
+      <!-- Grid row -->
+      <div class="row d-flex justify-content-center">
+    
+        <!-- Grid column -->
+        <div class="col-xl-7 pb-2"> 
+    
+          <p class="card-text">Welcome to Corona-virus-tracker page, now the world deal with a new pandemic which is Covonavirus. The virus itself is not only destroy our daily activities, but It's also hit hard on global economy by the rapid speading all around the world</p>
+          <p class="card-text">Join with us to support the community by helping local business, share your thought, pray with us or donate to help people who is suffer by the pandemic.</p>
+    
         </div>
-  
+        <!-- Grid column -->
+    
       </div>
-      <!-- Grid column -->
-  
-      <!-- Grid column -->
-      <div class="col-md-7 text-md-left ml-3 mt-3">
-  
-        <!-- Excerpt -->
-        <a href="#!" class="green-text">
-          <h6 class="h6 pb-1"><i class="fas fa-desktop pr-1"></i>Developer</h6>
-        </a>
-  
-        <h4 class="indigo-text my-4 font-weight-bold">What would you do to protect yourself and help our community?</h4>
-        <p><i class="fas fa-clinic-medical">  The coronavirus outbreak is an ongoing global outbreak of coronavirus
-          disease (COVID-19) first identified in Wuhan, Hubei, China in December
-          2019.
-        
-          </i>
-        </p>
-        <p>Click below to see the latest update about Corona-virus</p>
-        <!-- date picker here  -->
-      <div id="sky" class="row ">
-          <div class="col-sm-2">
-            <input type="date" id="datePicker1" class="form-control" />
-          </div>
-        </div>
-        <div class="break-out"><br /></div>
-        <div class="row">
-          <div class="col-sm-12">
-            <button type="button" class="btn btn-primary"  id="submitBtn">View Data</button>
-        
-                
-           
-             </button>
-          </div>
-        </div>
-        <div class="break-out"><br /></div>
-        <div class="row">
-          <div class="col-sm-12">
-            <button
-              class="btn btn-danger"
-              data-toggle="collapse"
-              data-target="#redmondBusiness"
-            >
-              For Redmond Business Owners
-            </button>
-          </div>
-        </div>
-        <!-- end of date picker -->
-      </div>
-  
-      <div class="container">
-        <!-- collecting data about Redmond local business -->
-        <div id="redmondBusiness" class="collapse">
-          <div class="row">
-            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSfEgOrAGARD1myVYITnN3C2VtMwldcSYjEv3_SBfewHJjNdVA/viewform?embedded=true"
-              width="640"
-              height="1759"
-              frameborder="0"
-              marginheight="0"
-              marginwidth="0"
-              >Loading…</iframe
-            >
-          </div>
-        </div>
-  
-        <!-- end collecting data about Redmond local business -->
-  
-        <div class="break-out"><br /></div>
-        <!-- This row will handle all the data -->
-        <div class="row">
-          <div class="card">
-            <div class="card-body emp" id="today-section">
-             
-  
-              <div class="table-responsive tableFixHead" id="today"></div>
+      <!-- Grid row -->
+    
+      <hr class="my-4 rgba-white-light">
+    
+      <div class="pt-2">
+        <a href="data.html"><button type="button" class="btn btn-outline-white">View latest data update</button></a>
+        <button 
+        type="button" class="btn btn-outline-white"
+        class="btn btn-danger"
+                data-toggle="collapse"
+                data-target="#redmondBusiness"
+        >Help local business</button>
+       <div class="container">
+          <!-- collecting data about Redmond local business -->
+          <div id="redmondBusiness" class="collapse">
+            <div class="row">
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSfEgOrAGARD1myVYITnN3C2VtMwldcSYjEv3_SBfewHJjNdVA/viewform?embedded=true"
+                width="640"
+                height="1759"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                >Loading…</iframe
+              >
             </div>
           </div>
-        </div>
-      </div>
-  
-      <!-- end of card -->
-  
-      <!-- adding a footer -->
+    
+          
+
+  </div>
+  <!--/.Navbar-->
+  <!-- News jumbotron -->
   
       
         <!-- Copyright -->
@@ -199,12 +153,10 @@
 </html>
 
 
-<body>
+
     
      
       
   
       
-      
-</body>
-</html>
+       

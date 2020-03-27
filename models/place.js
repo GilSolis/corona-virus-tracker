@@ -1,33 +1,34 @@
 module.exports = function(sequelize, DataTypes) {
-  var Post = sequelize.define("Place", {
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: {
-          args: [1, 250]
-        }
-      }
-    },
-    titleLink: {
-      type: DataTypes.TEXT,
-      validate: {
-        len: [1]
-      }
-    },
-    optionText: {
-      type: DataTypes.TEXT,
-      len: [1]
-    },
-    optionLink: {
-      type: DataTypes.TEXT,
-      len: [1]
-    },
-    text: {
-      type: DataTypes.TEXT,
-      len: [1]
-    }
-  });
+    var Post = sequelize.define("Place", {
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        titleLink: {
+            type: DataTypes.TEXT
+        },
+        optionText: {
+            type: DataTypes.TEXT
 
-  return Post;
+        },
+        optionLink: {
+            type: DataTypes.TEXT
+        },
+        text: {
+            type: DataTypes.TEXT
+
+
+        },
+        optionText: {
+            type: DataTypes.TEXT,
+        },
+        optionLink: {
+            type: DataTypes.TEXT,
+        },
+        text: {
+            type: DataTypes.TEXT,
+        }
+    });
+
+    return Post;
 };
