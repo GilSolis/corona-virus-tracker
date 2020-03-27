@@ -15,13 +15,12 @@ const hbs = require("express-handlebars");
 app.engine("handlebars", hbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-require("./routes/categoryApiRoutes.js")(app);
 app.use(require("./routes"));
 
-db.sequelize.sync({ force: true }).then(function () {
+db.sequelize.sync({}).then(function () {
   axios.get("http://redmondlocal.com").then(({ data }) => {
     const $ = cheerio.load(data);
-    
+
     $("h4.has-text-align-center").each(function (i, element) {
     
       db.Category.create({ name: $(element).text() })
