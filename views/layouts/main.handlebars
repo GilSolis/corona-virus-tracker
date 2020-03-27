@@ -12,10 +12,60 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
 
-    <title>Peter B - Coronavirus tracker</title>
+    <title>Coronavirus tracker</title>
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#">Corona-virus Tracker</a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/prayers">Thoughts and Prayers</a>
+                </li>
+
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">More</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Share and thought</a>
+                        <a class="dropdown-item" href="#">Support community</a>
+                        <a class="dropdown-item" href="login.html">Login</a>
+                    </div>
+                </li>
+
+            </ul>
+            <!-- Links -->
+
+            <form class="form-inline">
+                <div class="md-form my-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                </div>
+            </form>
+        </div>
+        <!-- Collapsible content -->
+
+    </nav>
+
     <nav>
         <a href="/">Home</a>
         <a href="/login">Login</a>
@@ -23,12 +73,12 @@
     </nav>
 
     {{{body}}}
-
+    <!-- adding an arrow to scroll to the top -->
+    <a id="back2Top" title="Back to top" href="#">&#10148;</a>
     <!-- adding a footer -->
     {{>main/footer}}
 
-    <!-- adding an arrow to scroll to the top -->
-    <a id="back2Top" title="Back to top" href="#">&#10148;</a>
+
 
     <!-- linking font awesome -->
     <script src="https://kit.fontawesome.com/8bee116590.js" crossorigin="anonymous"></script>
@@ -43,7 +93,7 @@
 
     <script type="text/javascript" src="assets/js/prayer.js"></script>
     <script src="./assets/js/script.js"></script>
-    <!-- Have fun and stay healthy! Peter :)  -->
+
 </body>
 
 </html>
