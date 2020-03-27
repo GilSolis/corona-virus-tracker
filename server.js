@@ -15,24 +15,19 @@ const hbs = require("express-handlebars");
 app.engine("handlebars", hbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// require("./routes/categoryApiRoutes.js")(app);
 app.use(require("./routes"));
 
-db.sequelize.sync({}).then(function() {
+db.sequelize.sync({ force: true }).then(function() {
     axios.get("http://redmondlocal.com").then(({ data }) => {
         const $ = cheerio.load(data);
 
         $("h4.has-text-align-center").each(function(i, element) {
-            // console.log($(this));
+
             db.Category.create({ name: $(element).text() })
                 .then(function(category) {
-                    // console.log(category.dataValues.id)
-                    // db.Place.create({ name: "Peter" })
-                    // console.log("===========>", $(this).find('.wp-block-columns').children());
-                    var cols = $(element).siblings('.wp-block-columns').children();
-                    //console.log(cols);
 
-                    // console.log(cols);
+                    var cols = $(element).siblings('.wp-block-columns').children();
+
 
                     cols.each(function(i, element) {
                         db.Place.create({
@@ -45,12 +40,7 @@ db.sequelize.sync({}).then(function() {
                         })
                     })
                 })
-                // .catch(function(err){console.log (err)})
+                .catch(function(err) { console.log(err) })
         });
-
-    })
-
-    app.listen(PORT, function() {
-        console.log("Listening on PORT", PORT);
     });
-});
+})
