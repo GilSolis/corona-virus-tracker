@@ -44,18 +44,6 @@ if (window.location.pathname === "/") {
     });
 
     function datePicker(today) {
-        // var dtToday = new Date();
-
-        // date picker limits the # of days to choose from
-
-
-        // end date picker
-
-
-        // end capture user date choice
-
-        // var maxDate = year + '-' + month + '-' + day;
-
         $("#datePicker1").attr("max", today.format("YYYY-MM-DD"));
     }
 
@@ -125,22 +113,7 @@ if (window.location.pathname === "/") {
         var p = dateString.split(/\D/g);
         return [p[1], p[2], p[0]].join("-");
     }
-    //
 
-    // Have fun and stay healthy! Peter :)
-
-    // in case I need data from the table - but it's same as papa parse returns
-    // function getTableData(table) {
-    // 	var data = [];
-    // 	table.find('tr').each(function (rowIndex, r) {
-    // 		var cols = [];
-    // 		$(this).find('th,td').each(function (colIndex, c) {
-    // 			cols.push(c.textContent);
-    // 		});
-    // 		data.push(cols);
-    // 	});
-    // 	console.log(data);
-    // };
     function zoomin() {
         var myImg = document.getElementById("sky");
         var currWidth = myImg.clientWidth;

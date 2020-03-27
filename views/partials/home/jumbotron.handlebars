@@ -1,4 +1,56 @@
 <div class="jumbotron">
+    <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#">Corona-virus Tracker</a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="paypal.html">Donation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">More</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Share and thought</a>
+                        <a class="dropdown-item" href="#">Support community</a>
+                        <a class="dropdown-item" href="login.html">Login</a>
+                    </div>
+                </li>
+
+            </ul>
+            <!-- Links -->
+
+            <form class="form-inline">
+                <div class="md-form my-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                </div>
+            </form>
+        </div>
+        <!-- Collapsible content -->
+
+    </nav>
+
     <h1 class="display-4">
         <i class="fas fa-clinic-medical"></i> Coronavirus latest stats
     </h1>
@@ -8,7 +60,6 @@
         2019.
     </p>
     <hr class="my-4" />
-
     <p>
         This page provides the recent info about the COVID-19 spread around the
         world (updated daily from systems.jhu.edu). You can support this portal
@@ -16,13 +67,13 @@
     </p>
     <!-- paypal button here -->
     {{>home/paypalBtn}}
-
     <p>
         As of today (<span id="todayDate"></span>) historical data is available
         for <span id="dataDays"></span> days since January 22, 2020. Pick a date
         from the field below and click submit to see the data.
     </p>
-
+    <iframe style="width:100%" ; width="560" height="380" src="https://coronavirus.app/map?embed=true" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <!-- date picker here  -->
     {{>home/datePicker}}
 
