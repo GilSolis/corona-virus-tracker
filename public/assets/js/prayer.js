@@ -56,6 +56,11 @@ if (window.location.pathname === "/prayers") {
         });
     }
 
+    $("#before").on("click",()=>{
+        offset-=LIMIT;
+        getPrayers(LIMIT, offset);
+    });
+    
     $("#next").on("click", function() {
         offset += LIMIT;
         getPrayers(LIMIT, offset);
