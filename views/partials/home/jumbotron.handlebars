@@ -1,38 +1,60 @@
-<div class="jumbotron">
-    <h1 class="display-4">
-        <i class="fas fa-clinic-medical"></i> Coronavirus latest stats
-    </h1>
-    <p>
-        The coronavirus outbreak is an ongoing global outbreak of coronavirus
-        disease (COVID-19) first identified in Wuhan, Hubei, China in December
-        2019.
-    </p>
-    <hr class="my-4" />
+<div class="bg">
+    <div class="jumbotron text-center mdb-color lighten-2 white-text mx-2 mb-5">
 
-    <p>
-        This page provides the recent info about the COVID-19 spread around the
-        world (updated daily from systems.jhu.edu). You can support this portal
-        by clicking the Donate button:
-    </p>
-    <!-- paypal button here -->
-    {{>home/paypalBtn}}
+        <!-- Title -->
+        <h2 class="card-title h2">Corona-Virus information</h2>
 
-    <p>
-        As of today (<span id="todayDate"></span>) historical data is available
-        for <span id="dataDays"></span> days since January 22, 2020. Pick a date
-        from the field below and click submit to see the data.
-    </p>
+        <!-- Subtitle -->
 
-    <!-- date picker here  -->
-    {{>home/datePicker}}
 
-    <div class="break-out"><br /></div>
-    <div class="row">
-        <div class="col-sm-12">
-            <button class="btn btn-danger" data-toggle="collapse" data-target="#redmondBusiness">
-                For Redmond Business Owners
-            </button>
+        <!-- Grid row -->
+        <div class="row d-flex justify-content-center">
+
+            <!-- Grid column -->
+            <div class="col-xl-7 pb-2">
+
+                <p class="card-text">Welcome to Corona-virus-tracker page, now the world deal with a new pandemic which
+                    is
+                    Covonavirus. The virus itself is not only destroy our daily activities, but It's also hit hard on
+                    global
+                    economy by the rapid speading all around the world</p>
+                <p class="card-text">Join with us to support the community by helping local business, share your
+                    thought, pray
+                    with us or donate to help people who is suffer by the pandemic.</p>
+
+            </div>
+            <!-- Grid column -->
+
         </div>
+        <!-- Grid row -->
+
+        <hr class="my-4 rgba-black">
+
+        <p class="text-align-center">
+            This page provides the recent info about the COVID-19 spread around the
+            world (updated daily from <a href="https://systems.jhu.edu/" style="color:coral">systems.jhu.edu</a>).
+        </p>
+
+
+
+
+        <div class="break-out"><br /></div>
+
+        <iframe style="width:100%" ; width="560" height="380" src="https://coronavirus.app/map?embed=true"
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+
+        <hr class="my-4" />
+
+
+
+
+
+        {{!-- <p class="my-4 h6">Latest update on Coronavirus(COVID-19)<span id="today"></span></p> --}}
+        {{!-- <p class="my4 h6">
+            As of today (<span id="todayDate"></span>) historical data is available
+            for <span id="dataDays"></span> days since January 22, 2020. Pick a date
+            from the field below and click submit to see the data.
+        </p> --}}
+        <!-- end of date picker -->
     </div>
-    <!-- end of date picker -->
-</div>
