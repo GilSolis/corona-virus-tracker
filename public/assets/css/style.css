@@ -1,7 +1,7 @@
-/* * {
+* {
     padding: 0;
     margin: 0;
-} */
+}
 
 #back2Top {
     width: 55px;
@@ -47,6 +47,13 @@ table td {
 }
 
 /* Prayer styling */
+
+#prayersJumbotron {
+    background-image: url(../img/row_of_candles.jpg);
+    font-family: "Arial black";
+    font-size: 400%;
+    color: ivory;
+}
 
 /* #prayerForm {
     width: 90vw;
