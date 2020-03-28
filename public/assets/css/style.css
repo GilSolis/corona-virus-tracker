@@ -46,14 +46,6 @@ table td {
     border: 1px solid rgb(218, 215, 215);
 }
 
-footer {
-    border-top: 3px solid #4aaaa5;
-    background-color: #666666;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #ffffff;
-}
-
-
 /* Prayer styling */
 
 #prayersJumbotron {
@@ -62,7 +54,6 @@ footer {
     font-size: 400%;
     color: ivory;
 }
-
 
 /* #prayerForm {
     width: 90vw;
@@ -84,9 +75,7 @@ footer {
     width: 90vw
 } */
 
-
 /* next prayer button */
-
 
 /* #next {
     margin-top: 1%;

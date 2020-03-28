@@ -6,7 +6,7 @@ if (window.location.pathname === "/") {
 
 
     /*Scroll to top when arrow up clicked BEGIN*/
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         var height = $(window).scrollTop();
         if (height > 100) {
             $("#back2Top").fadeIn();
@@ -15,7 +15,8 @@ if (window.location.pathname === "/") {
         }
     });
 
-    $(document).ready(function() {
+    $(document).ready(function () {
+
         const today = moment();
         const dayZero = moment("01/22/2020", "MM/DD/YYYY");
         const daysSinceOutbreak = today.diff(dayZero, "days");
@@ -29,14 +30,14 @@ if (window.location.pathname === "/") {
         $("#dataDays").html(daysSinceOutbreak);
         $(".todayDate").html(today.format("M-D-YYYY"));
 
-        $("#submitBtn").on("click", function(event) {
+        $("#submitBtn").on("click", function (event) {
             event.preventDefault();
 
             $("#today").empty();
             displayTable($("#datePicker1").val());
         });
 
-        $("#back2Top").click(function(event) {
+        $("#back2Top").click(function (event) {
             event.preventDefault();
             $("html, body").animate({ scrollTop: 0 }, "slow");
             return false;
@@ -51,7 +52,7 @@ if (window.location.pathname === "/") {
         const searchDate = convertDate(date);
         const searchUrl = `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/${searchDate}.csv`;
         console.log(date);
-        $.get(searchUrl).then(function(results) {
+        $.get(searchUrl).then(function (results) {
             TABLE_DATA = results.split("\n")
             arrayToTable()
         });
@@ -60,7 +61,7 @@ if (window.location.pathname === "/") {
         function dataForToday() {
             Papa.parse(searchUrl, {
                 download: true,
-                complete: function(results) {
+                complete: function (results) {
                     $("#today").append(arrayToTable(results.data));
                     scrollToTable();
                 }
@@ -70,7 +71,7 @@ if (window.location.pathname === "/") {
         //end scrolling to the results for mobile
     }
 
-    $("#moreTable").on("click", function() {
+    $("#moreTable").on("click", function () {
         pageIndex + LIMIT;
         arrayToTable()
     })
@@ -83,7 +84,7 @@ if (window.location.pathname === "/") {
             const element = TABLE_DATA[i];
             var row = $("<tr></tr>");
             var rowData = element.split(",");
-            rowData.forEach(function(cellData) {
+            rowData.forEach(function (cellData) {
                 row.append($("<td>" + cellData + "</td>"));
             });
             table.append(row);
@@ -101,8 +102,8 @@ if (window.location.pathname === "/") {
     //scrolling to the results for mobile
     function scrollToTable() {
         $("html, body").animate({
-                scrollTop: $("#tableFixHead").offset()
-            },
+            scrollTop: $("#tableFixHead").offset()
+        },
             1000
         );
     }

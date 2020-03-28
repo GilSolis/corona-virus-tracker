@@ -12,4 +12,7 @@ router.get("/prayers", (req, res) => {
   res.render("pages/prayers");
 });
 
+router.get("/paypal", (req, res) => {
+  res.render("partials/home/paypalBtn");
+})
 module.exports = router;
