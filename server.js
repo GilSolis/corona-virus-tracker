@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8085;
 
 const db = require("./models");
 
@@ -17,7 +17,7 @@ app.set("view engine", "handlebars");
 
 app.use(require("./routes"));
 
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({}).then(function() {
     axios.get("http://redmondlocal.com").then(({ data }) => {
         const $ = cheerio.load(data);
 
