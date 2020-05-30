@@ -4,7 +4,7 @@ Enables users to get up to date statistics surrounding Covid-19 in regards to nu
 Additionally, local users can view a dynamically updated data set of businesses along with their operational details.  User can also read thoughts and prayers left by others or add a prayer of there oww in a Thoughts and Prayers social component.
 
 ## Link To Application
-#TBD
+https://covidnstuff.herokuapp.com/
 
 ## Built With
 
